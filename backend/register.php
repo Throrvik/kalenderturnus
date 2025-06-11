@@ -1,6 +1,7 @@
 <?php
 // Inkluder database.php for å koble til databasen
 require_once 'database.php';
+header('Content-Type: application/json');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Rens output-buffer for å sikre ren JSON-respons

@@ -1,8 +1,6 @@
 <?php
 session_start();
-echo '<pre>';
-print_r($_SESSION);
-echo '</pre>';
+header('Content-Type: application/json');
 
 
 if (isset($_SESSION['user_id'])) {
