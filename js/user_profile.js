@@ -1,5 +1,10 @@
+document.addEventListener('session-verified', (e) => {
+    if (e.detail.loggedIn) {
+        fetchUserData();
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function () {
-    fetchUserData();
 
     const profileForm = document.getElementById('user-profile-form');
     if (profileForm) {
