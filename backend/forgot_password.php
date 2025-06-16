@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $mail->Port = 465;                                  
 
                 // Mottaker og avsender
-                $mail->setFrom('noreply@kalenderturnus.no', 'KalenderTurnus');
+                $mail->setFrom('noreply@minturnus.no', 'KalenderTurnus');
                 $mail->addAddress($email); // Send e-post til brukeren som ønsker tilbakestilling
 
                 // Innhold i e-posten

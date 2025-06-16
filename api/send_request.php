@@ -52,7 +52,7 @@ if ($stmt->affected_rows > 0) {
             // Sørg for korrekt tegnsett i emne og innhold
             $mail->CharSet = 'UTF-8';
 
-            $mail->setFrom('noreply@kalenderturnus.no', 'KalenderTurnus');
+            $mail->setFrom('noreply@minturnus.no', 'KalenderTurnus');
             $mail->addAddress($row['email']);
 
             $mail->isHTML(true);
