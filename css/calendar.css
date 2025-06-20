@@ -177,10 +177,26 @@
     z-index: 2; /* Sørger for at datoen alltid er synlig */
 }
 
-.shift-box {
+.shift-box, .shift-override {
     flex: 0 0 calc(25% - 2px); /* Fire prikker per rad */
     aspect-ratio: 1 / 1;
     border-radius: 50%;
+}
+
+.shift-override {
+    box-shadow: 0 0 0 2px var(--accent-color);
+    position: relative;
+}
+
+.shift-override::after {
+    content: "!";
+    color: var(--primary-color);
+    font-size: 0.55rem;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 
