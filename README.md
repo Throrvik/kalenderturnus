@@ -28,6 +28,8 @@ MinTurnus is a small PHP and JavaScript web application for managing shifts and 
 
 Database and mail credentials are currently stored in `backend/database.php` and `backend/send_mail.php`. To keep sensitive data out of version control you can either create a `config.php` file or rely on environment variables.
 
+The file `backend/config.php` is ignored by Git and will not be present after cloning the repository. You must create it manually and define the variables before running the application.
+
 ### Using `config.php`
 
 Create a new file `backend/config.php` and define your settings:
