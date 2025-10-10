@@ -2,4 +2,8 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/kalende1/public_html
-    - /bin/cp -R * $DEPLOYPATH
+    - export NPM_BIN=/opt/cpanel/ea-nodejs22/bin/npm
+    - $NPM_BIN ci
+    - $NPM_BIN run build
+    - /bin/rsync -a --delete dist/ $DEPLOYPATH/
+    - if [ -f web/.htaccess ]; then /bin/rsync -a web/.htaccess $DEPLOYPATH/.htaccess; fi

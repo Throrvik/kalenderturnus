@@ -1,0 +1,16 @@
+RewriteEngine On
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+RewriteRule ^ index.html [L]
+
+# Correct MIME types for JavaScript modules
+AddType text/javascript .js .mjs
+AddType application/wasm .wasm
+AddType text/css .css
+
+# Enable CORS if needed
+<IfModule mod_headers.c>
+  Header set Access-Control-Allow-Origin "*"
+</IfModule>

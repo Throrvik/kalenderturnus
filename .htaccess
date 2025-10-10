@@ -1,0 +1,18 @@
+# Aktiver mod_rewrite
+RewriteEngine On
+
+# Omdiriger HTTP til HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Omdiriger til www (fra ikke-www)
+RewriteCond %{HTTP_HOST} ^kalenderturnus\.no$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.kalenderturnus\.no$
+RewriteRule ^/?$ "https\:\/\/minturnus\.no\/" [R=301,L]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# Set the “ea-php82” package as the default “PHP” programming language.
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php82 .php .php8 .phtml
+</IfModule>
+# php -- END cPanel-generated handler, do not edit
